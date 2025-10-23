@@ -19,6 +19,8 @@ export default function Protected ({children, authentication = true}) {
     }, [authStatus, authentication, navigate])
 
     return (
-        loader ? <h1>Loading...</h1> : <>{children}</>
+        loader ? <div aria-live="polite" aria-busy="true" style={{ fontSize: "2rem", textAlign: "center" }}>
++                 Loading...
++             </div> : <>{children}</>
     )
 }
